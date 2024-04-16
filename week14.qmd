@@ -7,6 +7,27 @@ execute:
 ---
 
 ```{r}
+packages<- c(
+"dplyr",
+"readr",
+"tidyr",
+"purrr",
+"broom",
+"magrittr",
+"corrplot",
+"caret",
+"rpart",
+"rpart.plot",
+"e1071",
+"torch",
+"luz",
+"ramify",
+"keras"
+)
+sapply(packages, require, character.only=T)
+```
+
+```{r}
 library(tidyverse)
 data = read.csv("image_data.csv",header = F)
 change = lapply(asplit(data, 1), matrix, nrow= 28)
@@ -257,5 +278,3 @@ The non linear one is doing a better job than the linear one.
 # 3
 
 Mode collapse: This occurs when the generator collapses to generating a limited set of samples, ignoring the diversity present in the training data. As a result, the generator produces similar samples(all cats).
-
-
