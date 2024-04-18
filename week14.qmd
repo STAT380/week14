@@ -1,31 +1,10 @@
 ---
-title: "HW3"
+title: "Week 14"
 format: ipynb
 editor: visual
 execute:
   warning: false
 ---
-
-```{r}
-packages<- c(
-"dplyr",
-"readr",
-"tidyr",
-"purrr",
-"broom",
-"magrittr",
-"corrplot",
-"caret",
-"rpart",
-"rpart.plot",
-"e1071",
-"torch",
-"luz",
-"ramify",
-"keras"
-)
-sapply(packages, require, character.only=T)
-```
 
 ```{r}
 library(tidyverse)
@@ -50,7 +29,6 @@ image((mean784%>% matrix(nrow=28))[,28:1], useRaster=TRUE, axes=FALSE, col=gray.
 for (i in 1:3){
   changei = change[[i]] - mean784
   image(changei[,28:1], useRaster=TRUE, axes=FALSE, col=gray.colors(1000) )
-  
 }
 ```
 
@@ -278,3 +256,5 @@ The non linear one is doing a better job than the linear one.
 # 3
 
 Mode collapse: This occurs when the generator collapses to generating a limited set of samples, ignoring the diversity present in the training data. As a result, the generator produces similar samples(all cats).
+
+# 4

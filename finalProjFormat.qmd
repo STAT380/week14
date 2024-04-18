@@ -1,0 +1,75 @@
+---
+title: "A meaningful Title"
+author: "Xihui Xu"
+format: pdf
+execute:
+  echo: false
+  warning: false
+editor: visual
+---
+
+## Introduction
+
+List Table/Plot Caption and formatting cross reference Appendix at the end
+
+Useful link:
+
+1.  https://quarto.org/docs/authoring/markdown-basics.html
+
+2.  https://quarto.org/docs/authoring/cross-references.html
+
+3.  https://quarto.org/docs/output-formats/html-code.html
+
+4.  ordered list
+
+5.  item 2
+
+-   unordered list
+    -   sub-item 1
+    -   sub-item 2
+        -   sub-sub-item 1
+
+1.  ordered list
+2.  item 2
+    i)  sub-item 1
+        A.  sub-sub-item 1
+
+## Conclusion
+
+@tbl-tables is a good table.
+
+```{r}
+#| echo: false
+#| label: tbl-tables
+#| tbl-cap: "Cars"
+data(mtcars)
+library(kableExtra)
+kable(head(cars))
+```
+
+```{r}
+#| label: fig-plot1
+#| fig-cap: "Plot"
+plot(mtcars$mpg, mtcars$disp, main = "meaningful title")
+```
+
+@fig-plot1 is a meaningful plot.
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+# Appendix- Include ALL your code
+
+```{r}
+#| echo: true
+#| eval: false
+
+# ALL your code here
+
+```
